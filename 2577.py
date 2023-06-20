@@ -1,15 +1,14 @@
-A=int(input())
-B=int(input())
-C=int(input())
-gob = A*B*C
-g_list = list(map(int,str(gob)))
+import sys
 
-result = [0,0,0,0,0,0,0,0,0,0]
+a=int(sys.stdin.readline())
+b=int(sys.stdin.readline())
+c=int(sys.stdin.readline())
+result=[0]*10
+n = a*b*c
 
-for i in range(9) :
-    for j in range(len(g_list)):
-        if i == g_list[j] :
-            result[i] +=1
-i=0
-for i in range(10):
-    print(result[i])
+while n!=0:
+    tmp=n%10
+    result[tmp]+=1
+    n//=10
+for i in result:
+    print(i)
